@@ -151,4 +151,31 @@
 <button class="nv" data-g="contact" data-t="contact" aria-label="Contact"><svg viewBox="0 0 24 24"><rect x="3.5" y="6" width="17" height="12.5" rx="2.5"/><path d="M4.5 8l7.5 5.5L19.5 8"/></svg><span>Contact</span></button>
 </nav>
 <script src="js/main.js"></script>
+  
+  <style>
+.fig img{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8em;padding:4vh 4vw;background:rgba(8,9,10,.94);opacity:0;pointer-events:none;transition:opacity .2s;cursor:zoom-out;touch-action:none}
+.lb.open{opacity:1;pointer-events:auto}
+.lb img{width:auto;height:auto;max-width:100%;max-height:calc(100svh - 14vh);object-fit:contain;border:0;border-radius:4px}
+.lb p{margin:0;font-size:.85em;color:#9a9ca1}
+.lb button{position:absolute;top:16px;right:20px;padding:8px 14px;border:1px solid rgba(232,230,225,.25);border-radius:99px;background:none;color:#e8e6e1;font:600 13px "Hanken Grotesk",Arial,sans-serif;cursor:pointer}
+</style>
+<script>
+(function(){
+var lb=document.createElement('div');lb.className='lb';lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');lb.setAttribute('aria-label','Photo viewer');
+lb.innerHTML='<button type="button">Close</button><img alt=""><p></p>';document.body.appendChild(lb);
+var im=lb.querySelector('img'),cap=lb.querySelector('p'),btn=lb.querySelector('button'),from=null;
+function isOpen(){return lb.classList.contains('open')}
+function open(img){from=img;im.src=img.currentSrc||img.src;im.alt=img.alt;var f=img.closest('figure'),c=f&&f.querySelector('figcaption');cap.textContent=c?c.textContent:'';cap.hidden=!c;lb.classList.add('open');btn.focus()}
+function close(){lb.classList.remove('open');if(from)from.focus({preventScroll:true})}
+[].forEach.call(document.querySelectorAll('.fig img'),function(i){i.tabIndex=0;i.setAttribute('role','button');i.setAttribute('aria-label','View full screen: '+i.alt)});
+document.addEventListener('click',function(e){var i=e.target.closest&&e.target.closest('.fig img');
+if(i&&!isOpen()){e.preventDefault();open(i)}else if(isOpen()&&lb.contains(e.target)){close()}},true);
+addEventListener('keydown',function(e){
+if(isOpen()){e.stopPropagation();if(e.key==='Escape')close();else if(e.key!=='Enter'&&e.key!==' ')e.preventDefault();return}
+if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.fig img')){e.preventDefault();e.stopPropagation();open(e.target)}},true);
+addEventListener('wheel',function(e){if(isOpen()){e.preventDefault();e.stopPropagation()}},{capture:true,passive:false});
+})();
+</script>
+  
 </body></html>
