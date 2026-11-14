@@ -9,9 +9,9 @@
 <style>html,body{background:#0c0d0f;color:#e8e6e1}</style>
 <link rel="stylesheet" href="css/style.css">
 <style>
-.hello{display:flex;align-items:center;gap:clamp(14px,2vw,32px);margin-bottom:.4em}
-.hello h1{margin:0;min-width:0}
-.pfp{flex:none;display:block;width:clamp(64px,8vw,130px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 30%;margin:0;border:1px solid rgba(232,230,225,.22);box-shadow:0 0 0 6px rgba(232,230,225,.04),0 10px 40px rgba(0,0,0,.5);opacity:0;transform:scale(.4);animation:pfpPop .6s .15s cubic-bezier(.34,1.56,.64,1) forwards}
+.hello{display:flex;align-items:center;gap:.4em;font-size:clamp(28px,5.2vw,84px);margin-bottom:.5em}
+.hello .typing-heading{font-size:inherit;line-height:1;margin:0;min-width:0}
+.pfp{flex:none;display:block;width:1.25em;height:1.25em;border-radius:50%;object-fit:cover;object-position:50% 50%;margin:0;border:1px solid rgba(232,230,225,.22);box-shadow:0 0 0 6px rgba(232,230,225,.04),0 10px 40px rgba(0,0,0,.5);opacity:0;transform:scale(.4);animation:pfpPop .6s .15s cubic-bezier(.34,1.56,.64,1) forwards}
 @keyframes pfpPop{60%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.pfp{animation:none;opacity:1;transform:none}}
 </style>
@@ -21,8 +21,7 @@
 <main>
 
 <section class="slide on" id="cover" data-g="cover"><div class="in">
-  <img class="pfp" src="images/pfp.jpg" width="120" height="120" alt="Riddhima Kapoor">
-<div class="hello"><img class="pfp" src="images/pfp.jpg" width="120" height="120" alt="Riddhima Kapoor"><h1 class="typing-heading" aria-label="Hi, I'm Riddhima Kapoor"><span id="typing-text"></span><span class="typing-cursor" aria-hidden="true">|</span></h1></div>
+<div><div class="hello"><img class="pfp" src="images/pfp.jpg" width="120" height="120" alt="Riddhima Kapoor"><h1 class="typing-heading" aria-label="Hi, I'm Riddhima Kapoor"><span id="typing-text"></span><span class="typing-cursor" aria-hidden="true">|</span></h1></div>
 <p class="mute cover-degree">Fashion Technology @ NIFT Kolkata</p>
 <p class="mute cover-masters">MA Strategic Fashion Marketing<br>MA Global Fashion Retailing</p></div>
 <div class="landing-menu" aria-label="Portfolio sections"><span>About Me</span><span>Education</span><span>Internship</span><span>Summer Internship</span><li><a href="#cta" data-go="cta">Coursework<span>dashboard, research, segmentation, craft</span></a></li><span>How I Work</span></div></div>
