@@ -10,6 +10,7 @@ function set(i){if(i===cur)return;cur=i;S.forEach(function(s,k){s.classList.togg
 var g=S[i].dataset.g;N.forEach(function(n){n.setAttribute('aria-current',n.dataset.g===g)});
 ct.textContent=(i+1)+' / '+S.length;orbs(i)}
 function measure(){var m=innerHeight/2,b=0;for(var i=0;i<S.length;i++){var r=S[i].getBoundingClientRect();if(r.top<=m&&r.bottom>m){b=i;break}}set(b)}
+function typeHeading(){var el=document.getElementById('typing-text');if(!el)return;var text=el.parentNode.getAttribute('aria-label'),i=0;function next(){if(i<text.length){el.textContent+=text.charAt(i++);setTimeout(next,70)}}next()}
 addEventListener('scroll',function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(measure)},{passive:true});addEventListener('resize',measure);
 /* super snappy: short quartic ease-out jump */
 function jump(y){var s=pageYOffset,d=y-s,t0=null,dur=reduce?0:340;if(!d)return;anim=true;root.style.scrollSnapType='none';
@@ -28,4 +29,4 @@ if(k==='ArrowDown'||k==='PageDown')d=1;else if(k==='ArrowUp'||k==='PageUp')d=-1;
 else if(k==='Home')to=0;else if(k==='End')to=S.length-1;else return;e.preventDefault();go(to!==null?to:cur+d)});
 /* soft pointer light */
 if(!reduce)addEventListener('pointermove',function(e){O[2].style.left=(e.clientX/innerWidth*60+10)+'vw';O[2].style.top=(e.clientY/innerHeight*50)+'vh'},{passive:true});
-measure()})();
+measure();typeHeading()})();
