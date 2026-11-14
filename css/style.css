@@ -40,6 +40,7 @@ p{margin:0 0 .8em;max-width:62ch}ul{margin:0;padding-left:1.1em}li{margin-bottom
 .cover-masters{margin:1.1em 0 0;line-height:1.35}
 .intern-title{font-size:clamp(25px,3vw,46px);white-space:nowrap}
 .intern-project{margin:.35em 0 1.4em;font-size:.88em;letter-spacing:.04em}
+.cta-subtitle{font-size:.9em;margin-top:-.25em}
 /* nav */
 .nav{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 3vh);translate:-50% 0;z-index:50;display:flex;gap:2px;padding:5px;border-radius:99px;background:rgba(20,21,24,.7);backdrop-filter:blur(16px);border:1px solid var(--line);max-width:calc(100vw - 16px)}
 .nv{display:flex;align-items:center;height:40px;min-width:40px;padding:0 10px;border:0;border-radius:99px;background:none;color:var(--mute);cursor:pointer;font:600 12.5px var(--sans);transition:background .2s,color .2s}
