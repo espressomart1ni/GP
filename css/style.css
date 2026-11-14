@@ -54,3 +54,4 @@ p{margin:0 0 .8em;max-width:62ch}ul{margin:0;padding-left:1.1em}li{margin-bottom
 .landing-menu{position:absolute;right:6vw;top:50%;transform:translateY(-50%);display:grid;gap:.8em;text-align:left;color:var(--mute);font-size:1.05em}.landing-menu span{display:block}
 .typing-cursor{display:inline-block;margin-left:.08em;color:var(--mute);animation:blink 1s steps(1,end) infinite}@keyframes blink{50%{opacity:0}}
 @media(max-width:860px){.landing-menu{display:none}}
+#background .tl{align-self:start}
