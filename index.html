@@ -8,12 +8,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,300;1,6..72,300&display=swap" rel="stylesheet">
 <style>html,body{background:#0c0d0f;color:#e8e6e1}</style>
 <link rel="stylesheet" href="css/style.css">
+  <style>
+.pfp{display:block;width:clamp(84px,9vw,128px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 30%;margin-bottom:1.1em;border:1px solid rgba(232,230,225,.22);box-shadow:0 0 0 6px rgba(232,230,225,.04),0 10px 40px rgba(0,0,0,.5);opacity:0;transform:scale(.4);animation:pfpPop .6s .15s cubic-bezier(.34,1.56,.64,1) forwards}
+@keyframes pfpPop{60%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.pfp{animation:none;opacity:1;transform:none}}
+</style>
 </head><body>
 <div class="bd" aria-hidden="true"><div class="o a" id="oa"></div><div class="o b" id="ob"></div><div class="o c" id="oc"></div><div class="grain"></div></div>
 <div class="ct" id="ct" aria-hidden="true"></div>
 <main>
 
 <section class="slide on" id="cover" data-g="cover"><div class="in">
+  <img class="pfp" src="images/pfp.jpg" width="120" height="120" alt="Riddhima Kapoor">
 <div><h1 class="typing-heading" aria-label="Hi, I'm Riddhima Kapoor"><span id="typing-text"></span><span class="typing-cursor" aria-hidden="true">|</span></h1>
 <p class="mute cover-degree">Fashion Technology @ NIFT Kolkata</p>
 <p class="mute cover-masters">MA Strategic Fashion Marketing<br>MA Global Fashion Retailing</p></div>
